@@ -8,11 +8,30 @@ import Footer from './components/Footer'
 
 const workingDaysPerMonth = 22
 
-function randomInRange(min, max) {
-  return Math.random() * (max - min) + min
+// Generate deterministic "pseudo-random" values based on task name hash
+function hashCode(str) {
+  let hash = 0
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i)
+    hash = ((hash << 5) - hash) + char
+    hash = hash & hash // Convert to 32-bit integer
+  }
+  return Math.abs(hash)
 }
-function randomInt(min, max) {
-  return Math.floor(randomInRange(min, max + 1))
+
+function seededRandom(seed, min, max) {
+  const x = Math.sin(seed) * 10000
+  return min + (x - Math.floor(x)) * (max - min)
+}
+
+function getConsistentTimeMin(taskName) {
+  const seed = hashCode(taskName)
+  return Math.floor(seededRandom(seed, 30, 150))
+}
+
+function getConsistentPotential(taskName) {
+  const seed = hashCode(taskName) * 2
+  return seededRandom(seed, 0.6, 1.0)
 }
 
 function getDifficulty(potential) {
@@ -116,8 +135,8 @@ export default function App() {
 
     const taskLines = tasksInput.split('\n').map(s => s.trim()).filter(Boolean)
     const computed = taskLines.map(name => {
-      const timeMin = randomInt(30, 150)
-      const potential = randomInRange(0.6, 1.0)
+      const timeMin = getConsistentTimeMin(name)
+      const potential = getConsistentPotential(name)
       const difficulty = getDifficulty(potential)
       const dailySavedMin = timeMin * potential
       const monthlyHoursSaved = (dailySavedMin * workingDaysPerMonth) / 60
