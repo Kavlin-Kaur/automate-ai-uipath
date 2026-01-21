@@ -33,18 +33,18 @@ export default function ActionPlan() {
   return (
     <section className="mt-4">
       <div className="glass rounded-2xl p-5 sm:p-6 md:p-8 gradient-border">
-        <h2 className="text-xl sm:text-2xl md:text-2xl font-semibold">Action Plan</h2>
-        <p className="text-white/70 text-xs sm:text-sm mt-1">Use this 5-step approach to implement automation effectively.</p>
+        <h2 className="text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900">Action Plan</h2>
+        <p className="text-gray-600 text-xs sm:text-sm mt-1">Use this 5-step approach to implement automation effectively.</p>
         <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
           {steps.map(({ title, desc, icon: Icon }, i) => (
-            <div key={i} className="glass rounded-xl p-4 h-full flex flex-col card-hover group hover:bg-gradient-to-br hover:from-orange-500/15 hover:to-amber-500/10 hover:border-orange-400/30 transition-all duration-300 min-w-0">
+            <div key={i} className="glass rounded-xl p-4 h-full flex flex-col card-hover group hover:bg-orange-50 hover:border-orange-300 transition-all duration-300 min-w-0">
               <div className="flex flex-col gap-3 flex-1">
-                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-orange-500/30 to-amber-500/20 flex items-center justify-center group-hover:from-orange-500/40 group-hover:to-amber-500/30 transition-all self-start">
-                  <Icon className="h-5 w-5 text-orange-400" />
+                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-orange-200 to-amber-200 flex items-center justify-center group-hover:from-orange-300 group-hover:to-amber-300 transition-all self-start">
+                  <Icon className="h-5 w-5 text-orange-700" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white text-sm sm:text-base leading-snug">{title}</h3>
-                  <p className="text-white/70 text-xs sm:text-sm mt-1 leading-relaxed">{desc}</p>
+                  <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-snug">{title}</h3>
+                  <p className="text-gray-600 text-xs sm:text-sm mt-1 leading-relaxed">{desc}</p>
                 </div>
               </div>
             </div>

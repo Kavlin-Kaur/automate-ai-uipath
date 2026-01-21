@@ -8,12 +8,12 @@ html, body, #root {
 }
 
 body {
-  @apply bg-gradient-to-br from-purple-950 via-purple-900 via-indigo-900 to-indigo-950 text-white antialiased;
+  @apply bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100 text-gray-900 antialiased;
 }
 
 /* Glassmorphism utility */
 .glass {
-  @apply bg-white/10 backdrop-blur-xl border border-white/15 shadow-lg;
+  @apply bg-white/90 backdrop-blur-sm border border-gray-200 shadow-md;
 }
 
 /* Card hover */
@@ -32,7 +32,7 @@ body {
   inset: 0;
   border-radius: 1rem;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(250,70,22,0.6), rgba(251,146,60,0.6));
+  background: linear-gradient(135deg, rgba(251,146,60,0.3), rgba(252,211,77,0.3));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
@@ -62,5 +62,5 @@ html {
 
 /* Selection color */
 ::selection {
-  @apply bg-orange-500/30 text-white;
+  @apply bg-orange-300/50 text-gray-900;
 }

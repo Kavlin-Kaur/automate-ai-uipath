@@ -171,7 +171,7 @@ export default function App() {
     <div className="min-h-screen">
       <div className="relative">
         {/* Decorative gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900" />
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100" />
         <div className="relative">
           <Header />
           <main className="mx-auto max-w-6xl px-4 pb-16">
@@ -195,7 +195,7 @@ export default function App() {
 
                 {/* Task Breakdown */}
                 <section className="mt-6">
-                  <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4">Task Breakdown</h2>
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 text-gray-900">Task Breakdown</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     {results.map((task, idx) => (
                       <TaskCard key={idx} task={task} />
@@ -210,8 +210,8 @@ export default function App() {
                 <section className="mt-6">
                   <div className="glass rounded-2xl p-5 sm:p-6 gradient-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="flex-1">
-                      <h3 className="text-base sm:text-lg font-semibold">Download UiPath Implementation Plan</h3>
-                      <p className="text-white/70 text-xs sm:text-sm mt-1">Export tasks with activities, estimates, and templates.</p>
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900">Download UiPath Implementation Plan</h3>
+                      <p className="text-gray-600 text-xs sm:text-sm mt-1">Export tasks with activities, estimates, and templates.</p>
                     </div>
                     <button
                       onClick={() => {
@@ -244,7 +244,7 @@ export default function App() {
                         a.remove()
                         URL.revokeObjectURL(url)
                       }}
-                      className="inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold bg-gradient-to-r from-[#FA4616] via-orange-500 to-amber-400 hover:from-orange-600 hover:via-orange-400 hover:to-yellow-300 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/50 w-full sm:w-auto flex-shrink-0"
+                      className="inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold bg-gradient-to-r from-orange-500 via-orange-600 to-amber-500 hover:from-orange-600 hover:via-orange-700 hover:to-amber-600 transition-all duration-300 hover:shadow-lg w-full sm:w-auto flex-shrink-0"
                     >
                       Download
                     </button>

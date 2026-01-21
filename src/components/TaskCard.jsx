@@ -19,69 +19,69 @@ function DifficultyBadge({ level }) {
 export default function TaskCard({ task }) {
   const potentialPct = Math.round(task.potential * 100)
   return (
-    <div className="glass rounded-2xl p-5 sm:p-6 gradient-border card-hover group hover:bg-white/10 transition-all duration-300">
+    <div className="glass rounded-2xl p-5 sm:p-6 gradient-border card-hover group hover:bg-orange-50/50 transition-all duration-300">
       <div className="flex flex-col sm:flex-row items-start justify-between gap-3 sm:gap-4">
         <div className="flex-1 min-w-0">
-          <h3 className="text-base sm:text-lg font-semibold text-white">{task.name}</h3>
-          <p className="text-white/70 text-xs sm:text-sm mt-1">Time per day: {task.timeMin} min</p>
-          <p className="text-white/70 text-xs sm:text-sm">Monthly savings: <span className="font-semibold text-orange-300">₹{Math.round(task.monthlySavings).toLocaleString()}</span></p>
+          <h3 className="text-base sm:text-lg font-semibold text-gray-900">{task.name}</h3>
+          <p className="text-gray-600 text-xs sm:text-sm mt-1">Time per day: {task.timeMin} min</p>
+          <p className="text-gray-600 text-xs sm:text-sm">Monthly savings: <span className="font-semibold text-orange-600">₹{Math.round(task.monthlySavings).toLocaleString()}</span></p>
         </div>
         <DifficultyBadge level={task.difficulty} />
       </div>
 
       {/* Progress bar */}
       <div className="mt-4">
-        <div className="flex items-center justify-between text-xs text-white/70">
+        <div className="flex items-center justify-between text-xs text-gray-600">
           <span>Automation Potential</span>
-          <span className="font-semibold text-orange-300">{potentialPct}%</span>
+          <span className="font-semibold text-orange-600">{potentialPct}%</span>
         </div>
-        <div className="mt-2 h-2.5 rounded-full bg-white/10 overflow-hidden">
+        <div className="mt-2 h-2.5 rounded-full bg-gray-200 overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-400 shadow-lg shadow-orange-500/50"
+            className="h-full bg-gradient-to-r from-orange-500 via-orange-600 to-amber-500 shadow-md"
             style={{ width: `${potentialPct}%` }}
           />
         </div>
       </div>
 
       <div className="mt-4 text-sm">
-        <p className="text-white/80 mb-2"><span className="text-white/60">Suggestion:</span></p>
-        <pre className="whitespace-pre-wrap text-white/85 text-xs sm:text-sm font-mono overflow-x-auto">{task.suggestion}</pre>
-        <div className="mt-3 text-orange-300 font-semibold text-xs sm:text-sm flex items-center gap-2"><span>⚡</span> UiPath Workflow: Use {task.uipath.requiredActivities[0]} from UiPath Studio</div>
+        <p className="text-gray-700 mb-2"><span className="text-gray-500">Suggestion:</span></p>
+        <pre className="whitespace-pre-wrap text-gray-700 text-xs sm:text-sm font-mono overflow-x-auto">{task.suggestion}</pre>
+        <div className="mt-3 text-orange-600 font-semibold text-xs sm:text-sm flex items-center gap-2"><span>⚡</span> UiPath Workflow: Use {task.uipath.requiredActivities[0]} from UiPath Studio</div>
       </div>
 
       {/* UiPath Implementation Guide */}
-      <div className="mt-5 glass rounded-xl p-4 border-orange-500/20">
+      <div className="mt-5 glass rounded-xl p-4 border-orange-300">
         <div className="flex items-center gap-2 mb-3">
-          <Bot className="h-5 w-5 text-orange-400" />
-          <span className="font-semibold text-sm">UiPath Implementation Guide</span>
+          <Bot className="h-5 w-5 text-orange-600" />
+          <span className="font-semibold text-sm text-gray-900">UiPath Implementation Guide</span>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
           <div className="flex items-start gap-2">
-            <Workflow className="h-4 w-4 mt-0.5 text-orange-300 flex-shrink-0" />
+            <Workflow className="h-4 w-4 mt-0.5 text-orange-600 flex-shrink-0" />
             <div className="min-w-0">
-              <div className="text-white/70 text-xs">Required Activities</div>
-              <div className="text-white/85 text-xs sm:text-sm break-words">{task.uipath.requiredActivities.join(', ')}</div>
+              <div className="text-gray-600 text-xs">Required Activities</div>
+              <div className="text-gray-800 text-xs sm:text-sm break-words">{task.uipath.requiredActivities.join(', ')}</div>
             </div>
           </div>
           <div className="flex items-start gap-2">
-            <Cpu className="h-4 w-4 mt-0.5 text-orange-300 flex-shrink-0" />
+            <Cpu className="h-4 w-4 mt-0.5 text-orange-600 flex-shrink-0" />
             <div>
-              <div className="text-white/70 text-xs">Bot Type</div>
-              <div className="text-white/85 text-xs sm:text-sm">{task.uipath.botType}</div>
+              <div className="text-gray-600 text-xs">Bot Type</div>
+              <div className="text-gray-800 text-xs sm:text-sm">{task.uipath.botType}</div>
             </div>
           </div>
           <div className="flex items-start gap-2">
-            <Gauge className="h-4 w-4 mt-0.5 text-orange-300 flex-shrink-0" />
+            <Gauge className="h-4 w-4 mt-0.5 text-orange-600 flex-shrink-0" />
             <div>
-              <div className="text-white/70 text-xs">Complexity</div>
-              <div className="text-white/85 text-xs sm:text-sm">{task.uipath.complexity}</div>
+              <div className="text-gray-600 text-xs">Complexity</div>
+              <div className="text-gray-800 text-xs sm:text-sm">{task.uipath.complexity}</div>
             </div>
           </div>
           <div className="flex items-start gap-2">
-            <CheckCircle className="h-4 w-4 mt-0.5 text-orange-300 flex-shrink-0" />
+            <CheckCircle className="h-4 w-4 mt-0.5 text-orange-600 flex-shrink-0" />
             <div className="min-w-0">
-              <div className="text-white/70 text-xs">Marketplace Template</div>
-              <div className="text-white/85 text-xs sm:text-sm break-words">{task.uipath.template}</div>
+              <div className="text-gray-600 text-xs">Marketplace Template</div>
+              <div className="text-gray-800 text-xs sm:text-sm break-words">{task.uipath.template}</div>
             </div>
           </div>
         </div>
