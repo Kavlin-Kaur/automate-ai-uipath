@@ -174,7 +174,7 @@ export default function App() {
         <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100" />
         <div className="relative">
           <Header />
-          <main className="mx-auto max-w-6xl px-4 pb-16">
+          <main className="mx-auto max-w-6xl px-4 sm:px-6 py-6 sm:py-8 pb-16">
             <InputSection
               tasksInput={tasksInput}
               setTasksInput={setTasksInput}
@@ -186,7 +186,7 @@ export default function App() {
             />
 
             {analyzed && (
-              <div className="space-y-8 fade-in">
+              <div className="mt-8 space-y-8 fade-in">
                 <SummaryCards
                   totalDailySavedMin={summary.totalDailySavedMin}
                   monthlySavings={summary.monthlySavings}
@@ -194,8 +194,8 @@ export default function App() {
                 />
 
                 {/* Task Breakdown */}
-                <section className="mt-6">
-                  <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 text-gray-900">Task Breakdown</h2>
+                <section className="mt-8">
+                  <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 text-gray-900">Task Breakdown</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     {results.map((task, idx) => (
                       <TaskCard key={idx} task={task} />
@@ -207,7 +207,7 @@ export default function App() {
                 <ActionPlan />
 
                 {/* Export Button */}
-                <section className="mt-6">
+                <section className="mt-8">
                   <div className="glass rounded-2xl p-5 sm:p-6 gradient-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="flex-1">
                       <h3 className="text-base sm:text-lg font-semibold text-gray-900">Download UiPath Implementation Plan</h3>

@@ -31,7 +31,7 @@ const steps = [
 
 export default function ActionPlan() {
   return (
-    <section className="mt-4">
+    <section className="mt-8">
       <div className="glass rounded-2xl p-5 sm:p-6 md:p-8 gradient-border">
         <h2 className="text-xl sm:text-2xl md:text-2xl font-semibold text-gray-900">Action Plan</h2>
         <p className="text-gray-600 text-xs sm:text-sm mt-1">Use this 5-step approach to implement automation effectively.</p>
