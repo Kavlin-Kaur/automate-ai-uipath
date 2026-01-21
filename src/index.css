@@ -8,33 +8,35 @@ html, body, #root {
 }
 
 body {
-  @apply bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 text-white antialiased;
+  @apply bg-gradient-to-br from-purple-950 via-purple-900 via-indigo-900 to-indigo-950 text-white antialiased;
 }
 
 /* Glassmorphism utility */
 .glass {
-  @apply bg-white/10 backdrop-blur-md border border-white/20;
+  @apply bg-white/10 backdrop-blur-xl border border-white/15 shadow-lg;
 }
 
 /* Card hover */
 .card-hover {
-  @apply transition-transform duration-300 hover:-translate-y-0.5 hover:scale-[1.01];
+  @apply transition-transform duration-300 hover:-translate-y-1 hover:scale-[1.02];
 }
 
 /* Gradient border */
 .gradient-border {
   position: relative;
+  overflow: hidden;
 }
 .gradient-border::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 1rem;
-  padding: 1px; /* control the border width */
-  background: linear-gradient(135deg, rgba(124,58,237,0.65), rgba(99,102,241,0.65));
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(250,70,22,0.6), rgba(251,146,60,0.6));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
           mask-composite: exclude;
+  pointer-events: none;
 }
 
 /* Smooth fade-in */
@@ -44,4 +46,21 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive containers */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-orange-500/30 text-white;
 }

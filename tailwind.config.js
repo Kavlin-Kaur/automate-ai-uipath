@@ -18,8 +18,15 @@ export default {
         },
       },
       boxShadow: {
-        glow: "0 0 30px rgba(124,58,237,0.25)",
-      }
+        glow: "0 0 30px rgba(250,70,22,0.3)",
+        "glow-lg": "0 0 50px rgba(250,70,22,0.4)",
+      },
+      keyframes: {
+        shimmer: {
+          "0%": { backgroundPosition: "200% center" },
+          "100%": { backgroundPosition: "-200% center" },
+        },
+      },
     },
   },
   plugins: [],

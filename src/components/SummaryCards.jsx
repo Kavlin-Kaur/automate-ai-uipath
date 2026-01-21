@@ -30,19 +30,19 @@ export default function SummaryCards({ totalDailySavedMin, monthlySavings, yearl
 
   return (
     <section>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {cards.map(({ title, value, sub, icon: Icon, gradient }, i) => (
-          <div key={i} className="relative rounded-2xl overflow-hidden card-hover">
-            <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-70`} />
-            <div className="relative glass p-6 md:p-7">
-              <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-xl bg-white/20 flex items-center justify-center">
-                  <Icon className="h-7 w-7" />
+          <div key={i} className="relative rounded-2xl overflow-hidden card-hover group">
+            <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-60 group-hover:opacity-80 transition-opacity duration-300`} />
+            <div className="relative glass p-5 sm:p-6 md:p-7 group-hover:bg-white/12 transition-all duration-300">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
+                <div className="h-12 w-12 rounded-xl bg-white/25 flex items-center justify-center flex-shrink-0 group-hover:bg-white/35 transition-all group-hover:scale-110">
+                  <Icon className="h-6 w-6" />
                 </div>
-                <div>
-                  <p className="text-white/80 text-sm">{title}</p>
-                  <p className="text-2xl font-bold">{value}</p>
-                  <p className="text-white/80 text-xs mt-1">{sub}</p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-white/75 text-xs sm:text-sm">{title}</p>
+                  <p className="text-xl sm:text-2xl font-bold mt-1">{value}</p>
+                  <p className="text-white/70 text-xs mt-1.5">{sub}</p>
                 </div>
               </div>
             </div>
